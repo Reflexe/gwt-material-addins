@@ -22,7 +22,6 @@ package gwt.material.design.addins.client.docviewer;
 import com.google.gwt.dom.client.Document;
 import com.google.gwt.dom.client.Element;
 import gwt.material.design.client.base.AbstractValueWidget;
-import gwt.material.design.client.base.MaterialWidget;
 
 //@formatter:off
 

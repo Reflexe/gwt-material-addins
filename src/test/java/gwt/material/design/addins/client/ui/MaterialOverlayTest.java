@@ -26,8 +26,6 @@ import gwt.material.design.addins.client.overlay.MaterialOverlay;
 import gwt.material.design.client.base.MaterialWidget;
 import gwt.material.design.client.ui.MaterialButton;
 
-import static gwt.material.design.jquery.client.api.JQuery.$;
-
 /**
  * Test case for overlay component
  *

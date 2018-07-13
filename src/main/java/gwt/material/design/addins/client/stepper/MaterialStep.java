@@ -82,6 +82,7 @@ public class MaterialStep extends MaterialWidget implements HasActive, HasTitle,
     private MaterialIcon iconError = new MaterialIcon(IconType.REPORT_PROBLEM);
     private MaterialIcon iconSuccess = new MaterialIcon(IconType.CHECK_CIRCLE);
     private ActiveMixin<MaterialStep> activeMixin;
+
     private Axis axis = Axis.VERTICAL;
     private State state;
 
@@ -94,7 +95,8 @@ public class MaterialStep extends MaterialWidget implements HasActive, HasTitle,
 
         super.add(conBody);
         conBody.add(divTitle);
-        conBody.add(divBody);
+
+//        conBody.add(divBody);
 
         divCircle.setStyleName(CssName.CIRCLE);
         divLine.setStyleName(AddinsCssName.LINE);
@@ -166,6 +168,14 @@ public class MaterialStep extends MaterialWidget implements HasActive, HasTitle,
     @Override
     public void setActive(boolean active) {
         getActiveMixin().setActive(active);
+
+        if (active) {
+            divBody.removeStyleName(CssName.INACTIVE);
+            divBody.addStyleName(CssName.ACTIVE);
+        } else {
+            divBody.removeStyleName(CssName.ACTIVE);
+            divBody.addStyleName(CssName.INACTIVE);
+        }
     }
 
     @Override

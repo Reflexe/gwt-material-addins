@@ -25,7 +25,6 @@ import gwt.material.design.addins.client.subheader.MaterialSubHeader;
 import gwt.material.design.addins.client.subheader.MaterialSubHeaderContainer;
 import gwt.material.design.addins.client.subheader.constants.SubHeaderType;
 import gwt.material.design.client.ui.MaterialPanel;
-import gwt.material.design.client.ui.MaterialSearch;
 
 /**
  * Test case for subheader component

@@ -21,7 +21,7 @@ package gwt.material.design.addins.client.stepper;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.resources.client.ClientBundle;
-import com.google.gwt.resources.client.TextResource;
+import com.google.gwt.resources.client.CssResource;
 
 /**
  * Client Bundle for Stepper component
@@ -32,6 +32,7 @@ interface MaterialStepperClientBundle extends ClientBundle {
 
     MaterialStepperClientBundle INSTANCE = GWT.create(MaterialStepperClientBundle.class);
 
-    @Source("resources/css/stepper.min.css")
-    TextResource stepperCss();
+    @CssResource.NotStrict
+    @Source("resources/css/stepper.css")
+    CssResource stepperCss();
 }

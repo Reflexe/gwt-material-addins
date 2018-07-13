@@ -20,7 +20,6 @@
 package gwt.material.design.addins.client.ui;
 
 import gwt.material.design.addins.client.MaterialWidgetTest;
-import gwt.material.design.addins.client.base.constants.AddinsCssName;
 import gwt.material.design.addins.client.sideprofile.MaterialSideProfile;
 import gwt.material.design.client.constants.CssName;
 import gwt.material.design.client.ui.MaterialLabel;

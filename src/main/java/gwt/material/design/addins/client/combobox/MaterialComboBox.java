@@ -41,7 +41,8 @@ import gwt.material.design.client.base.mixin.EnabledMixin;
 import gwt.material.design.client.base.mixin.ErrorMixin;
 import gwt.material.design.client.base.mixin.ReadOnlyMixin;
 import gwt.material.design.client.base.mixin.WavesMixin;
-import gwt.material.design.client.constants.CssName;
+import gwt.material.design.client.constants.*;
+import gwt.material.design.client.ui.MaterialIcon;
 import gwt.material.design.client.ui.MaterialLabel;
 import gwt.material.design.client.ui.html.Label;
 import gwt.material.design.client.ui.html.OptGroup;
@@ -82,7 +83,7 @@ import static gwt.material.design.addins.client.combobox.js.JsComboBox.$;
  */
 //@formatter:on
 public class MaterialComboBox<T> extends AbstractValueWidget<List<T>> implements JsLoader, HasPlaceholder,
-        HasOpenHandlers<T>, HasCloseHandlers<T>, HasUnselectItemHandler<T>, HasReadOnly {
+        HasOpenHandlers<T>, HasCloseHandlers<T>, HasUnselectItemHandler<T>, HasReadOnly, HasIcon {
 
     static {
         if (MaterialAddins.isDebug()) {
@@ -90,7 +91,7 @@ public class MaterialComboBox<T> extends AbstractValueWidget<List<T>> implements
             MaterialDesignBase.injectCss(MaterialComboBoxDebugClientBundle.INSTANCE.select2DebugCss());
         } else {
             MaterialDesignBase.injectJs(MaterialComboBoxClientBundle.INSTANCE.select2Js());
-            MaterialDesignBase.injectCss(MaterialComboBoxClientBundle.INSTANCE.select2Css());
+            MaterialComboBoxClientBundle.INSTANCE.select2Css().ensureInjected();
         }
     }
 
@@ -103,6 +104,7 @@ public class MaterialComboBox<T> extends AbstractValueWidget<List<T>> implements
     protected MaterialWidget listbox = new MaterialWidget(Document.get().createSelectElement());
     private KeyFactory<T, String> keyFactory = Object::toString;
     private JsComboBoxOptions options = JsComboBoxOptions.create();
+    private MaterialIcon icon = new MaterialIcon();
 
     private ErrorMixin<AbstractValueWidget, MaterialLabel> errorMixin;
     private ReadOnlyMixin<MaterialComboBox, MaterialWidget> readOnlyMixin;
@@ -111,6 +113,8 @@ public class MaterialComboBox<T> extends AbstractValueWidget<List<T>> implements
 
     public MaterialComboBox() {
         super(Document.get().createDivElement(), CssName.INPUT_FIELD, AddinsCssName.COMBOBOX);
+
+        getElement().getStyle().setDisplay(Style.Display.FLEX);
     }
 
     @Override
@@ -344,6 +348,54 @@ public class MaterialComboBox<T> extends AbstractValueWidget<List<T>> implements
     @Override
     public void setPlaceholder(String placeholder) {
         options.placeholder = placeholder;
+    }
+
+    @Override
+    public MaterialIcon getIcon() {
+        return icon;
+    }
+
+    @Override
+    public void setIconType(IconType iconType) {
+        icon.setIconType(iconType);
+        icon.setIconPrefix(true);
+        errorLabel.setPaddingLeft(44);
+        insert(icon, 0);
+    }
+
+    @Override
+    public void setIconPosition(IconPosition position) {
+        icon.setIconPosition(position);
+    }
+
+    @Override
+    public void setIconSize(IconSize size) {
+        icon.setIconSize(size);
+    }
+
+    @Override
+    public void setIconFontSize(double size, Style.Unit unit) {
+        icon.setIconFontSize(size, unit);
+    }
+
+    @Override
+    public void setIconColor(Color iconColor) {
+        icon.setIconColor(iconColor);
+    }
+
+    @Override
+    public Color getIconColor() {
+        return icon.getIconColor();
+    }
+
+    @Override
+    public void setIconPrefix(boolean prefix) {
+        icon.setIconPrefix(prefix);
+    }
+
+    @Override
+    public boolean isIconPrefix() {
+        return icon.isIconPrefix();
     }
 
     /**

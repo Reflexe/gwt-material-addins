@@ -21,6 +21,7 @@ package gwt.material.design.addins.client.combobox;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.resources.client.ClientBundle;
+import com.google.gwt.resources.client.CssResource;
 import com.google.gwt.resources.client.TextResource;
 
 /**
@@ -35,7 +36,8 @@ public interface MaterialComboBoxClientBundle extends ClientBundle {
     @Source("resources/js/select2.min.js")
     TextResource select2Js();
 
-    @Source("resources/css/select2.min.css")
-    TextResource select2Css();
+    @CssResource.NotStrict
+    @Source("resources/css/select2.css")
+    CssResource select2Css();
 
 }

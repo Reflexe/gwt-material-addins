@@ -22,7 +22,6 @@ package gwt.material.design.addins.client.ui;
 import com.google.gwt.user.client.ui.SuggestBox;
 import gwt.material.design.addins.client.autocomplete.MaterialAutoComplete;
 import gwt.material.design.addins.client.autocomplete.constants.AutocompleteType;
-import gwt.material.design.addins.client.base.constants.AddinsCssName;
 import gwt.material.design.addins.client.ui.base.AbstractValueWidgetTest;
 import gwt.material.design.addins.client.ui.base.dto.User;
 import gwt.material.design.addins.client.ui.base.dto.UserOracle;
